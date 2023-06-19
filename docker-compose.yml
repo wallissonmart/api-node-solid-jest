@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    container_name: database_games_api
+    restart: always
+    environment:
+      POSTGRES_USER: games
+      POSTGRES_PASSWORD: games
+      POSTGRES_DB: games_api
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/data/postgres
+
+  app:
+     build: .
+     container_name: games_api_app
+     ports:
+       - 5000:5000
+     volumes:
+      - .:/usr/app
+     links:
+      - db
+     depends_on:
+      - db
+
+volumes:
+  pgdata:
+    driver: local

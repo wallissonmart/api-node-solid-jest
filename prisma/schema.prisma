@@ -9,3 +9,16 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Game {
+  id          Int      @id @default(autoincrement())
+  name        String
+  designer    String
+  genre       String
+  platform    String
+  developer   String
+  releaseData String
+  mode        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+}
