@@ -1,18 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-    "module": "commonjs" /* Specify what module code is generated. */,
-    "rootDir": "src",
-    "outDir": "./dist" /* Specify the root folder within your source files. */,
-    "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */,
-    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
-    "strict": true /* Enable all strict type-checking options. */,
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "target": "es2016" /* Define a versão da linguagem JavaScript para o código JavaScript gerado e inclui declarações de bibliotecas compatíveis. */,
+    "module": "commonjs" /* Especifica o tipo de código do módulo gerado. */,
+    "experimentalDecorators": true /* Habilita o suporte a decoradores experimentais em TypeScript. */,
+    "emitDecoratorMetadata": true /* Habilita a geração de metadados do decorador para classes e membros anotados com decoradores. */,
+    "esModuleInterop": true /* Habilita a interoperabilidade de módulos do ECMAScript. */,
+    "rootDir": "./" /* Especifica a pasta raiz dentro dos arquivos de origem. */,
+    "outDir": "./dist" /* Especifica a pasta de destino para os arquivos JavaScript compilados. */,
+    "moduleResolution": "node" /* Especifica como o TypeScript procura um arquivo a partir de um especificador de módulo. */,
+    "forceConsistentCasingInFileNames": true /* Garante que o casing (maiúsculas/minúsculas) esteja correto nas importações de arquivos. */,
+    "strict": true /* Habilita todas as opções de verificação de tipo rigorosa. */,
+    "skipLibCheck": true /* Pula a verificação de tipo para todos os arquivos .d.ts. */,
     "paths": {
       "@/*": [
         "*"
       ]
-    },
-    "baseUrl": "src"
+    } /* Define mapeamentos de caminho para importar módulos usando alias personalizados. */,
+    "baseUrl": "src" /* Define a pasta base para a resolução de módulos. */
   }
 }

@@ -1,21 +1,41 @@
-import { randomUUID } from 'crypto';
+import { v4 as uuid } from 'uuid';
 
-export class Game {
+export interface IGameDTO {
+  name: string;
+  designer: string;
+  genre: string;
+  platform: string;
+  developer: string;
+  releaseData: string;
+  mode: string;
+}
+
+class Game {
   id?: string;
-  name: string | undefined;
+
+  name!: string;
+
   designer!: string;
+
   genre!: string;
+
   platform!: string;
+
   developer!: string;
+
   releaseData!: string;
+
   mode!: string;
+
   createdAt!: Date;
+
   updatedAt!: Date;
 
-  constructor(name: string) {
+  constructor() {
     if (!this.id) {
-      this.id = randomUUID();
-      this.name = name;
+      this.id = uuid();
     }
   }
 }
+
+export { Game };
