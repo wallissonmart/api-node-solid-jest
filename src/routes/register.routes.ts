@@ -1,5 +1,5 @@
-import { RegisterGameController } from '@/useCases/registerGame/RegisterGameController';
-import { registerValidator } from '@/useCases/registerGame/validator';
+import { RegisterGameController } from '@src/use-cases/register-game/RegisterGameController';
+import { registerValidator } from '@src/use-cases/register-game/validator';
 import { celebrate } from 'celebrate';
 import { Router } from 'express';
 

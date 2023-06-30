@@ -1,6 +1,6 @@
 import prisma from '../../prisma/prismaClient';
-import { IGameDTO } from '../entities/Game';
 import { IGameRepository } from './IGameRepository';
+import { Game, IGameDTO } from '@src/entities/Game';
 
 class GameRepository implements IGameRepository {
   async register({
@@ -11,8 +11,8 @@ class GameRepository implements IGameRepository {
     mode,
     name,
     platform,
-  }: IGameDTO): Promise<void> {
-    await prisma.game.create({
+  }: IGameDTO): Promise<Game> {
+    const game = await prisma.game.create({
       data: {
         releaseData,
         designer,
@@ -23,6 +23,8 @@ class GameRepository implements IGameRepository {
         platform,
       },
     });
+
+    return game;
   }
 }
 

@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+import { generateRandomUUID } from '@src/util/generateID';
 
 export interface IGameDTO {
   name: string;
@@ -11,29 +11,20 @@ export interface IGameDTO {
 }
 
 class Game {
-  id?: string;
-
+  id?: number;
   name!: string;
-
   designer!: string;
-
   genre!: string;
-
   platform!: string;
-
   developer!: string;
-
   releaseData!: string;
-
   mode!: string;
-
-  createdAt!: Date;
-
-  updatedAt!: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 
   constructor() {
     if (!this.id) {
-      this.id = uuid();
+      this.id = generateRandomUUID();
     }
   }
 }

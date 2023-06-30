@@ -1,4 +1,4 @@
-import { customMessage } from '@/utils/errors';
+import { customMessage } from '@src/util/errors';
 import { Joi, Segments } from 'celebrate';
 
 const registerValidator = {

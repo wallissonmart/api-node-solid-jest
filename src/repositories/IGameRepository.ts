@@ -1,7 +1,7 @@
-import { IGameDTO } from '../entities/Game';
+import { Game, IGameDTO } from '@src/entities/Game';
 
 interface IGameRepository {
-  register(game: IGameDTO): Promise<void>;
+  register(game: IGameDTO): Promise<Game>;
 }
 
 export { IGameRepository };

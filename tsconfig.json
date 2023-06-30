@@ -1,21 +1,39 @@
 {
   "compilerOptions": {
-    "target": "es2016" /* Define a versão da linguagem JavaScript para o código JavaScript gerado e inclui declarações de bibliotecas compatíveis. */,
-    "module": "commonjs" /* Especifica o tipo de código do módulo gerado. */,
-    "experimentalDecorators": true /* Habilita o suporte a decoradores experimentais em TypeScript. */,
-    "emitDecoratorMetadata": true /* Habilita a geração de metadados do decorador para classes e membros anotados com decoradores. */,
-    "esModuleInterop": true /* Habilita a interoperabilidade de módulos do ECMAScript. */,
-    "rootDir": "./" /* Especifica a pasta raiz dentro dos arquivos de origem. */,
-    "outDir": "./dist" /* Especifica a pasta de destino para os arquivos JavaScript compilados. */,
-    "moduleResolution": "node" /* Especifica como o TypeScript procura um arquivo a partir de um especificador de módulo. */,
-    "forceConsistentCasingInFileNames": true /* Garante que o casing (maiúsculas/minúsculas) esteja correto nas importações de arquivos. */,
-    "strict": true /* Habilita todas as opções de verificação de tipo rigorosa. */,
-    "skipLibCheck": true /* Pula a verificação de tipo para todos os arquivos .d.ts. */,
+    "target": "es2019", /* Define a versão da linguagem JavaScript que o código gerado deve ser compatível */
+    "moduleResolution": "node", /* Especifica como o TypeScript resolve os módulos */
+    "module": "commonjs", /* Especifica o tipo de módulo gerado */
+    "lib": [
+      "es2019"
+    ], /* Define as bibliotecas disponíveis para o projeto */
+    "sourceMap": true, /* Gera arquivos de mapa de origem para facilitar a depuração */
+    "outDir": "dist", /* Define a pasta de saída para os arquivos JavaScript compilados */
+    "strict": true, /* Habilita todas as opções de verificação de tipo rigorosa */
+    "noImplicitAny": true, /* Impede a inferência de tipo "any" quando nenhum tipo é especificado */
+    "strictNullChecks": true, /* Impede que valores "null" e "undefined" sejam atribuídos a tipos não permitidos */
+    "strictFunctionTypes": true, /* Habilita a verificação de tipo estrita para as assinaturas de função */
+    "noImplicitThis": true, /* Impede o uso implícito do tipo "any" para "this" */
+    "resolveJsonModule": true, /* Permite importar arquivos JSON como módulos */
+    "alwaysStrict": true, /* Insere a diretiva "use strict" em todos os arquivos gerados */
+    "removeComments": true, /* Remove os comentários do código JavaScript gerado */
+    "noImplicitReturns": true, /* Impede funções de terem uma ausência implícita de retorno */
+    "esModuleInterop": true, /* Habilita a interoperabilidade de módulos do ECMAScript */
+    "allowSyntheticDefaultImports": true, /* Permite importar um módulo que tenha um padrão de exportação padrão sintético */
+    "baseUrl": "./", /* Define o caminho base para a resolução de módulos */
     "paths": {
-      "@/*": [
-        "*"
-      ]
-    } /* Define mapeamentos de caminho para importar módulos usando alias personalizados. */,
-    "baseUrl": "src" /* Define a pasta base para a resolução de módulos. */
-  }
+      "@src/*": [
+        "./src/*"
+      ], /* Define mapeamentos de caminho para importar módulos usando alias personalizados para a pasta src */
+    },
+    "rootDir": "./", /* Define as pastas raiz para o processo de compilação */
+    "experimentalDecorators": true, /* Habilita o suporte a decoradores experimentais em TypeScript */
+    "emitDecoratorMetadata": true /* Habilita a geração de metadados do decorador para classes e membros anotados com decoradores */
+  },
+  "include": [
+    "**/*.ts" /* Lista de padrões de arquivos a serem incluídos no processo de compilação */
+  ],
+  "exclude": [
+    "./node_modules/*", /* Lista de padrões de arquivos a serem excluídos do processo de compilação */
+    "dist"
+  ]
 }

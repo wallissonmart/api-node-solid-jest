@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
-import { IGameDTO } from '@/entities/Game';
 import { RegisterGameUseCase } from './RegisterGameUseCase';
+import { IGameDTO } from '@src/entities/Game';
 
 class RegisterGameController {
   async handle(req: Request, res: Response): Promise<Response> {

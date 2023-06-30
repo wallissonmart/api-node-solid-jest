@@ -1,5 +1,5 @@
-import { IGameDTO } from '@/entities/Game';
-import { IGameRepository } from '@/repositories/IGameRepository';
+import { Game, IGameDTO } from '@src/entities/Game';
+import { IGameRepository } from '@src/repositories/IGameRepository';
 import { inject, injectable } from 'tsyringe';
 
 @injectable()
@@ -17,8 +17,8 @@ class RegisterGameUseCase {
     mode,
     name,
     platform,
-  }: IGameDTO): Promise<void> {
-    await this.gameRepository.register({
+  }: IGameDTO): Promise<Game> {
+    const game = await this.gameRepository.register({
       releaseData,
       designer,
       developer,
@@ -27,6 +27,8 @@ class RegisterGameUseCase {
       name,
       platform,
     });
+
+    return game;
   }
 }
 
